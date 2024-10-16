@@ -34,5 +34,14 @@ CREATE TABLE Staff (
     Contact_Info VARCHAR(100)
 );
 
+CREATE TABLE Membership (
+    Membership_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Customer_ID INT NOT NULL,
+    Membership_Type VARCHAR(50) NOT NULL,
+    Start_Date DATE NOT NULL,
+    End_Date DATE,
+    Price DECIMAL(6,2) NOT NULL,
+    FOREIGN KEY (Customer_ID) REFERENCES Customer(Customer_ID)
+);
 
 
