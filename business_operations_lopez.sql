@@ -49,3 +49,11 @@ ADD COLUMN Staff_ID INT,
 ADD CONSTRAINT Fk_Staff_Booking
 FOREIGN KEY (Staff_ID) REFERENCES Staff(Staff_ID);
 
+CREATE TABLE BookingMembership (
+    BookingMembership_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Booking_ID INT NOT NULL,
+    Membership_ID INT NOT NULL,
+    FOREIGN KEY (Booking_ID) REFERENCES Booking(Booking_ID),
+    FOREIGN KEY (Membership_ID) REFERENCES Membership(Membership_ID)
+);
+
