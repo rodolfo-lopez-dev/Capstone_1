@@ -56,4 +56,4 @@ CREATE TABLE BookingMembership (
     FOREIGN KEY (Booking_ID) REFERENCES Booking(Booking_ID),
     FOREIGN KEY (Membership_ID) REFERENCES Membership(Membership_ID)
 );
-
+DROP TABLE bookingmembership;
