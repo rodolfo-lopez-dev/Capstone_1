@@ -44,4 +44,8 @@ CREATE TABLE Membership (
     FOREIGN KEY (Customer_ID) REFERENCES Customer(Customer_ID)
 );
 
+ALTER TABLE Booking
+ADD COLUMN Staff_ID INT,
+ADD CONSTRAINT Fk_Staff_Booking
+FOREIGN KEY (Staff_ID) REFERENCES Staff(Staff_ID);
 
