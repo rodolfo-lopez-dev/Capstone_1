@@ -23,3 +23,9 @@ WHERE (Is_Middle_School = 'True' OR Is_High_School = 'True') AND Zip = '60629';
 /* total number of students in middle and high school within the area code with the potential market for
 a sports complex that would benefit the people in the area */
 
+SELECT `FACILITY TYPE`, COUNT(*) AS facility_count
+FROM market_research.park_research_data
+GROUP BY `FACILITY TYPE`;
+
+
+
