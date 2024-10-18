@@ -7,5 +7,7 @@
 - Build a database of my own that included customer, membership, booking and staff data
 ### **Entity-relationship diagram**
 - Customer: held information like name, email and phone number
-- Membership: held information such as the booking date and time, length of stay, service name and price, customer details, facility, and staff information
-- 
+- Membership: Includes information on membership type, duration, and the price 
+- Booking: held information such as the booking date and time, length of stay, service name and price, customer details, facility, and staff information
+- Facility: Give general details of the amenities and capacity 
+- Staff: Holds important staff member information
