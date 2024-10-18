@@ -27,5 +27,27 @@ SELECT `FACILITY TYPE`, COUNT(*) AS facility_count
 FROM market_research.park_research_data
 GROUP BY `FACILITY TYPE`;
 
+# shows the facilities in chicago that are indoor/outdoor and leads to realize a need for more indoor facilites
+
+
+SELECT `Age Group`, SUM(`60629 Value`) AS population
+FROM market_research.women_age_zipcode
+WHERE `Age Group` IN ('10 to 14 years', '15 to 17 years', '18 and 19 years', '20 years', '21 years', 
+                      '22 to 24 years', '25 to 29 years', '30 to 34 years', '35 to 39 years')
+GROUP BY `Age Group`;
+
+# found age group most likely to use a sport complex
+
+SELECT `Age Group`, SUM(`60629 Value`) AS population
+FROM market_research.male_zipcode
+WHERE `Age Group` IN ('10 to 14 years', '15 to 17 years', '18 and 19 years', '20 years', '21 years', 
+                      '22 to 24 years', '25 to 29 years', '30 to 34 years', '35 to 39 years')
+GROUP BY `Age Group`;
+
+# similar but now the male population 
+
+
+
+
 
 
