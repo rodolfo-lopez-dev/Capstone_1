@@ -1,3 +1,8 @@
+/* Section 1: Demographics related to school 
+This section looks at the schools,students in the 60629 area to see if a sports complex
+should be built
+*/
+
 SELECT COUNT(*) 
 FROM dataforcps
 WHERE Zip = '60629';
@@ -30,12 +35,32 @@ WHERE (Is_Middle_School = 'True' OR Is_High_School = 'True') AND Zip = '60629';
 /* total number of students in middle and high school within the area code with the potential market for
 the age groups that are likely to go to a sport complex in the area */
 
+/* Section 2: Recreational areas 
+We're assessing the need for an indoor facility based on existing recreational spaces 
+also distribution of soccer/football/basketball courts
+*/ 
+
 SELECT `FACILITY TYPE`, COUNT(*) AS facility_count
 FROM market_research.park_research_data
 GROUP BY `FACILITY TYPE`;
 
 # shows the facilities in chicago that are indoor/outdoor and results demonstrates a need for a sports complex that will be indoors
 
+SELECT `FACILITY NAME`, `FACILITY TYPE`, COUNT(*) AS facility_count
+FROM market_research.park_research_data
+WHERE (`FACILITY NAME` LIKE '%SOCCER%' OR `FACILITY NAME` LIKE '%BASKETBALL%') AND 
+(`FACILITY TYPE` = 'Indoor' OR `FACILITY TYPE` = 'Outdoor')
+GROUP BY `FACILITY NAME`, `FACILITY TYPE`
+ORDER BY `FACILITY NAME`, facility_count DESC;
+
+/* We've reviewed indoor and outdoor recreational facilities in Chicago and concluded
+ that there's a need for an indoor facility that aligns with our plan to develop a sports complex
+*/
+
+/* Section 3: Demographic by Age
+Here we're looking for population by age ggroup and sex to see the groups that are likely 
+to use a sport complex
+*/
 
 SELECT `Age Group`, SUM(`60629 Value`) AS population
 FROM market_research.women_age_zipcode
@@ -51,8 +76,10 @@ WHERE `Age Group` IN ('10 to 14 years', '15 to 17 years', '18 and 19 years', '20
                       '22 to 24 years', '25 to 29 years', '30 to 34 years', '35 to 39 years')
 GROUP BY `Age Group`;
 
-# similar but now the male population 
+# similar but now the male population
 
+/* Section 4:
+*/
 
 SELECT 
     Zip,
