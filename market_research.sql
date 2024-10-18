@@ -78,7 +78,9 @@ GROUP BY `Age Group`;
 
 # similar but now the male population
 
-/* Section 4:
+/* Section 4: Race and Income 
+We're focusing on low-income and also seeing the racial demographics who are the main target group 
+for this sports complex
 */
 
 SELECT 
